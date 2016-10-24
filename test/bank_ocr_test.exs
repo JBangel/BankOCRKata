@@ -42,4 +42,12 @@ defmodule BankOCRTest do
 
     assert BankOCR.Parser.split_digits(@repeat_pattern) == expected
   end
+
+  test "parse single digit" do
+    assert BankOCR.Parser.parse_digit(@digit_four) == "4"
+  end
+
+  test "parse another single digit" do
+    assert BankOCR.Parser.parse_digit(@digit_six) == "6"
+  end
 end
