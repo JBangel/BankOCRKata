@@ -65,6 +65,14 @@ defmodule BankOCRTest do
     |> BankOCR.split_input_by_acct
     |> Enum.count
 
-    assert count_account_numbers == 11
+    assert count_account_numbers == 3
+  end
+
+  test "Parse complete file" do
+    assert BankOCR.parse_acct_numbers_in_file("test/read_testfile.txt") == (
+      "333333333\n" <>
+      "555555555\n" <>
+      "123456789\n"
+    )
   end
 end

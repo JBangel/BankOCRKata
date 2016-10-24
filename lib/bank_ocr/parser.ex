@@ -76,4 +76,10 @@ defmodule BankOCR.Parser do
     " _ " <>
     "| |" <>
     "|_|"), do: "0"
+
+  def parse_digit(inp) do
+    IO.puts inspect(inp)
+
+    "?"
+  end
 end
