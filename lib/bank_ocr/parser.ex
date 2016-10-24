@@ -1,6 +1,11 @@
 defmodule BankOCR.Parser do
-  def parse_acct_number(_acct_string) do
-    {:not_implemented_yet}
+  def parse_acct_number(acct_string) do
+    results = acct_string
+    |> split_digits
+    |> Enum.map(&parse_digit/1)
+    |> Enum.join("")
+
+    {:valid, results}
   end
 
   def split_digits(acct_string) do
